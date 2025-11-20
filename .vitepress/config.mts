@@ -71,7 +71,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/interview-guide' }
+      { icon: 'github', link: 'https://github.com/VinceHu/study' }
     ],
 
     footer: {
