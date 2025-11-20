@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>左固定右自适应布局 - 多种实现方式</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .demo-section {
+      margin-bottom: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .demo-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #2c3e50;
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+    }
+
+    .demo-desc {
+      margin-bottom: 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .pros-cons {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+
+    .pros {
+      color: #27ae60;
+    }
+
+    .cons {
+      color: #e74c3c;
+    }
+
+    /* 通用样式 */
+    .container {
+      height: 200px;
+      border: 2px solid #3498db;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .left {
+      width: 200px;
+      background: #3498db;
+      color: white;
+      padding: 20px;
+    }
+
+    .right {
+      background: #ecf0f1;
+      padding: 20px;
+      color: #2c3e50;
+    }
+
+    /* 方案1: Flex布局 */
+    .flex-container {
+      display: flex;
+    }
+
+    .flex-container .right {
+      flex: 1;
+    }
+
+    /* 方案2: Grid布局 */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+    }
+
+    /* 方案3: Float + Margin */
+    .float-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .float-container .left {
+      float: left;
+    }
+
+    .float-container .right {
+      margin-left: 200px;
+    }
+
+    /* 方案4: 绝对定位 */
+    .position-container {
+      position: relative;
+    }
+
+    .position-container .left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
+
+    .position-container .right {
+      margin-left: 200px;
+    }
+
+    /* 方案5: Calc计算 */
+    .calc-container .left {
+      float: left;
+    }
+
+    .calc-container .right {
+      float: left;
+      width: calc(100% - 200px);
+    }
+
+    .calc-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    /* 代码展示 */
+    pre {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+    }
+
+    .highlight {
+      color: #f39c12;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>左固定右自适应布局 - 5种实现方式</h1>
+
+  <!-- 方案1: Flex布局 -->
+  <div class="demo-section">
+    <div class="demo-title">方案1: Flex布局（推荐⭐⭐⭐⭐⭐）</div>
+    <div class="demo-desc">现代布局的首选方案，代码简洁，功能强大</div>
+    <div class="pros-cons">
+      <div class="pros">✅ 优点: 简洁、灵活、自适应高度、易维护</div>
+      <div class="cons">❌ 缺点: 需要IE10+</div>
+    </div>
+    <div class="container flex-container">
+      <div class="left">
+        左侧固定<br>
+        width: 200px
+      </div>
+      <div class="right">
+        右侧自适应<br>
+        flex: 1<br>
+        <strong>核心原理：</strong>flex: 1 会自动占据剩余空间<br>
+        flex: 1 = flex-grow: 1; flex-shrink: 1; flex-basis: 0%
+      </div>
+    </div>
+    <pre><code><span class="highlight">.container</span> {
+  display: flex;
+}
+
+<span class="highlight">.left</span> {
+  width: 200px;
+}
+
+<span class="highlight">.right</span> {
+  flex: 1;  <span style="color: #95a5a6;">/* 占据剩余空间 */</span>
+}</code></pre>
+  </div>
+
+  <!-- 方案2: Grid布局 -->
+  <div class="demo-section">
+    <div class="demo-title">方案2: Grid布局（推荐⭐⭐⭐⭐）</div>
+    <div class="demo-desc">功能最强大的布局方案，适合复杂布局</div>
+    <div class="pros-cons">
+      <div class="pros">✅ 优点: 功能强大、语义清晰、二维布局</div>
+      <div class="cons">❌ 缺点: 兼容性略差（IE10部分支持）</div>
+    </div>
+    <div class="container grid-container">
+      <div class="left">
+        左侧固定<br>
+        200px
+      </div>
+      <div class="right">
+        右侧自适应<br>
+        1fr<br>
+        <strong>核心原理：</strong>1fr表示1个fraction（分数单位），占据剩余空间
+      </div>
+    </div>
+    <pre><code><span class="highlight">.container</span> {
+  display: grid;
+  grid-template-columns: 200px 1fr;  <span style="color: #95a5a6;">/* 左侧200px，右侧占剩余 */</span>
+}</code></pre>
+  </div>
+
+  <!-- 方案3: Float + Margin -->
+  <div class="demo-section">
+    <div class="demo-title">方案3: Float + Margin（传统方案⭐⭐⭐）</div>
+    <div class="demo-desc">经典的传统布局方案，兼容性最好</div>
+    <div class="pros-cons">
+      <div class="pros">✅ 优点: 兼容性好（IE6+）</div>
+      <div class="cons">❌ 缺点: 需要清除浮动、高度不统一、代码较多</div>
+    </div>
+    <div class="container float-container">
+      <div class="left">
+        左侧固定<br>
+        float: left
+      </div>
+      <div class="right">
+        右侧自适应<br>
+        margin-left: 200px<br>
+        <strong>核心原理：</strong>左侧浮动脱离文档流，右侧通过margin留出空间
+      </div>
+    </div>
+    <pre><code><span class="highlight">.left</span> {
+  float: left;
+  width: 200px;
+}
+
+<span class="highlight">.right</span> {
+  margin-left: 200px;  <span style="color: #95a5a6;">/* 为左侧浮动元素留出空间 */</span>
+}
+
+<span class="highlight">.container::after</span> {
+  content: '';
+  display: block;
+  clear: both;  <span style="color: #95a5a6;">/* 清除浮动 */</span>
+}</code></pre>
+  </div>
+
+  <!-- 方案4: 绝对定位 -->
+  <div class="demo-section">
+    <div class="demo-title">方案4: 绝对定位（简单直接⭐⭐⭐）</div>
+    <div class="demo-desc">使用绝对定位固定左侧，右侧留出空间</div>
+    <div class="pros-cons">
+      <div class="pros">✅ 优点: 简单直接、兼容性好</div>
+      <div class="cons">❌ 缺点: 脱离文档流、高度问题、父容器需要定位</div>
+    </div>
+    <div class="container position-container">
+      <div class="left">
+        左侧固定<br>
+        position: absolute
+      </div>
+      <div class="right">
+        右侧自适应<br>
+        margin-left: 200px<br>
+        <strong>核心原理：</strong>左侧绝对定位脱离文档流，右侧通过margin留出空间
+      </div>
+    </div>
+    <pre><code><span class="highlight">.container</span> {
+  position: relative;  <span style="color: #95a5a6;">/* 建立定位上下文 */</span>
+}
+
+<span class="highlight">.left</span> {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+}
+
+<span class="highlight">.right</span> {
+  margin-left: 200px;
+}</code></pre>
+  </div>
+
+  <!-- 方案5: Calc计算 -->
+  <div class="demo-section">
+    <div class="demo-title">方案5: Calc计算（灵活计算⭐⭐⭐⭐）</div>
+    <div class="demo-desc">使用CSS calc()函数动态计算宽度</div>
+    <div class="pros-cons">
+      <div class="pros">✅ 优点: 灵活、精确控制、易理解</div>
+      <div class="cons">❌ 缺点: 需要IE9+、仍需清除浮动</div>
+    </div>
+    <div class="container calc-container">
+      <div class="left">
+        左侧固定<br>
+        width: 200px
+      </div>
+      <div class="right">
+        右侧自适应<br>
+        width: calc(100% - 200px)<br>
+        <strong>核心原理：</strong>通过calc()动态计算剩余宽度
+      </div>
+    </div>
+    <pre><code><span class="highlight">.left</span> {
+  float: left;
+  width: 200px;
+}
+
+<span class="highlight">.right</span> {
+  float: left;
+  width: calc(100% - 200px);  <span style="color: #95a5a6;">/* 动态计算剩余宽度 */</span>
+}
+
+<span class="highlight">.container::after</span> {
+  content: '';
+  display: block;
+  clear: both;
+}</code></pre>
+  </div>
+
+  <!-- 总结对比 -->
+  <div class="demo-section">
+    <div class="demo-title">📊 方案对比总结</div>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+      <thead>
+        <tr style="background: #3498db; color: white;">
+          <th style="padding: 10px; border: 1px solid #ddd;">方案</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">代码量</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">兼容性</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">等高支持</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">推荐度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Flex</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐⭐⭐</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">IE10+</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">✅ 天然支持</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr style="background: #f8f9fa;">
+          <td style="padding: 10px; border: 1px solid #ddd;">Grid</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐⭐⭐</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">IE10+（部分）</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">✅ 天然支持</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Float</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">IE6+</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">❌ 需要技巧</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐</td>
+        </tr>
+        <tr style="background: #f8f9fa;">
+          <td style="padding: 10px; border: 1px solid #ddd;">定位</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐⭐</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">IE6+</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">❌ 需要设置</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Calc</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐⭐</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">IE9+</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">❌ 需要技巧</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">⭐⭐⭐⭐</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 4px;">
+      <strong>💡 面试建议：</strong><br>
+      1. 优先说Flex方案，这是现代开发的首选<br>
+      2. 解释flex: 1的含义，展示深入理解<br>
+      3. 补充其他方案，展示知识广度<br>
+      4. 说明各方案的适用场景和权衡
+    </div>
+  </div>
+
+</body>
+</html>
