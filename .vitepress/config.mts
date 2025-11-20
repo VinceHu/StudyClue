@@ -109,6 +109,15 @@ export default defineConfig({
     }
   },
 
+  ignoreDeadLinks: [
+    // 忽略本地开发链接
+    /^http:\/\/localhost/,
+    // 忽略代码示例的 HTML 文件链接
+    /\/code-examples\/.+\.html$/,
+    // 忽略不存在的相关文件
+    /async-await/,
+  ],
+
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'keywords', content: '前端面试,面试题,CSS,JavaScript,Vue,面试指导' }]
