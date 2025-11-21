@@ -399,17 +399,74 @@ const unique = arr => [...new Set(arr)];
 
 ## 💻 代码示例
 
-参考代码: [array-dedup.js](../../code-examples/array-dedup.js)
+### 方法一：ES6 Set（推荐）
 
-代码示例包含以下实现方式：
-1. ES6 Set（推荐）
-2. filter + indexOf
-3. reduce
-4. 双层循环
-5. Map
-6. Object键值对
-7. includes方法
-8. 对象数组去重
+```javascript
+function uniqueBySet(arr) {
+  return [...new Set(arr)];
+  // 或者: return Array.from(new Set(arr));
+}
+
+// 使用
+const arr = [1, 2, 2, 3, 4, 4, 5];
+console.log(uniqueBySet(arr)); // [1, 2, 3, 4, 5]
+```
+
+### 方法二：filter + indexOf
+
+```javascript
+function uniqueByIndexOf(arr) {
+  return arr.filter((item, index) => {
+    return arr.indexOf(item) === index;
+  });
+}
+
+// 注意：无法正确处理 NaN
+const arr = [1, NaN, 2, NaN, 3];
+console.log(uniqueByIndexOf(arr)); // [1, NaN, 2, NaN, 3] ❌
+```
+
+### 方法三：Map
+
+```javascript
+function uniqueByMap(arr) {
+  const map = new Map();
+  const result = [];
+  
+  arr.forEach(item => {
+    if (!map.has(item)) {
+      map.set(item, true);
+      result.push(item);
+    }
+  });
+  
+  return result;
+}
+```
+
+### 方法四：includes（处理 NaN）
+
+```javascript
+function uniqueByIncludes(arr) {
+  const result = [];
+  
+  arr.forEach(item => {
+    if (!result.includes(item)) {
+      result.push(item);
+    }
+  });
+  
+  return result;
+}
+
+// 可以正确处理 NaN
+const arr = [1, NaN, 2, NaN, 3];
+console.log(uniqueByIncludes(arr)); // [1, NaN, 2, 3] ✅
+```
+
+### 完整代码示例
+
+查看完整代码（包含所有方法和测试用例）：[array-dedup.js](../../code-examples/array-dedup.js)
 
 ## 🔗 相关知识点
 

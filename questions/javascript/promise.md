@@ -604,6 +604,50 @@ cancel(); // 取消
 
 ## 💻 代码示例
 
+### 基本用法
+
+```javascript
+// 创建 Promise
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const success = true;
+    if (success) {
+      resolve('操作成功');
+    } else {
+      reject('操作失败');
+    }
+  }, 1000);
+});
+
+// 使用 Promise
+promise
+  .then(result => {
+    console.log(result); // '操作成功'
+  })
+  .catch(error => {
+    console.error(error);
+  })
+  .finally(() => {
+    console.log('无论成功失败都会执行');
+  });
+```
+
+### Promise.all 示例
+
+```javascript
+const p1 = Promise.resolve(1);
+const p2 = Promise.resolve(2);
+const p3 = Promise.resolve(3);
+
+Promise.all([p1, p2, p3])
+  .then(results => {
+    console.log(results); // [1, 2, 3]
+  })
+  .catch(error => {
+    console.error('有一个失败了', error);
+  });
+```
+
 ### 实际应用场景
 
 **1. 并发请求控制**
