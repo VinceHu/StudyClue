@@ -8,7 +8,9 @@ related: [data-types.md, this-binding.md]
 hasCode: true
 ---
 
-# 原型与原型链
+# 题目
+
+请详细说明 JavaScript 的原型与原型链，以及如何实现继承（ES5 寄生组合继承 vs ES6 class extends）。
 
 ## 📝 标准答案
 

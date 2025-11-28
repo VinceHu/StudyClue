@@ -8,7 +8,9 @@ related: [http-versions.md, security.md]
 hasCode: true
 ---
 
-# 跨域 (CORS) 问题与解决方案
+# 题目
+
+请详细说明跨域 (CORS) 问题，同源策略是什么，以及解决方案（CORS 响应头配置、JSONP、代理）。
 
 ## 📝 标准答案
 

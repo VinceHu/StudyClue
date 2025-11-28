@@ -8,7 +8,9 @@ related: [closure.md, prototype-chain.md]
 hasCode: true
 ---
 
-# this 指向与箭头函数
+# 题目
+
+请详细说明 JavaScript 中 this 的指向规则，以及箭头函数与普通函数的区别（尤其是 this 指向）。
 
 ## 📝 标准答案
 

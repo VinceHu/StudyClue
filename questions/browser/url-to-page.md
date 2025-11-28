@@ -8,7 +8,9 @@ related: [repaint-reflow.md, cache-strategy.md]
 hasCode: true
 ---
 
-# 从输入 URL 到页面展示发生了什么
+# 题目
+
+请详细说明从输入 URL 到页面展示发生了什么（DNS 解析 → TCP 握手 → 发送请求 → 接收响应 → 解析 HTML → 构建 DOM/CSSOM → 生成 Render Tree → 布局 → 绘制）。
 
 ## 📝 标准答案
 

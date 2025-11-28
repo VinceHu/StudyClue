@@ -8,7 +8,9 @@ related: [url-to-page.md, cache-strategy.md]
 hasCode: true
 ---
 
-# 重绘 (Repaint) 与回流 (Reflow)
+# 题目
+
+请详细说明重绘 (Repaint) 与回流 (Reflow/Layout) 的区别是什么，以及如何减少回流。
 
 ## 📝 标准答案
 

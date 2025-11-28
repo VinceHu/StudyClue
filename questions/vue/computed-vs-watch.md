@@ -8,7 +8,9 @@ related: [vue2-vs-vue3.md, lifecycle.md]
 hasCode: true
 ---
 
-# computed 和 watch 的区别
+# 题目
+
+请详细说明 computed 和 watch 的区别与应用场景。
 
 ## 📝 标准答案
 

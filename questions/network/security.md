@@ -8,7 +8,9 @@ related: [cors.md, http-versions.md]
 hasCode: true
 ---
 
-# 前端安全：XSS 和 CSRF
+# 题目
+
+请详细说明 XSS (跨站脚本攻击) vs CSRF (跨站请求伪造) 的原理及防御方法。
 
 ## 📝 标准答案
 

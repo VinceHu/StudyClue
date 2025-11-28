@@ -8,7 +8,9 @@ related: [lifecycle.md, diff-algorithm.md]
 hasCode: true
 ---
 
-# v-if 和 v-show 的区别
+# 题目
+
+请详细说明 v-if 和 v-show 的区别，以及各自的使用场景。
 
 ## 📝 标准答案
 

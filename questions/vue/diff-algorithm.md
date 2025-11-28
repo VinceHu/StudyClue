@@ -8,7 +8,9 @@ related: [vue2-vs-vue3.md, v-if-vs-v-show.md]
 hasCode: true
 ---
 
-# Vue 的 diff 算法与 key 的作用
+# 题目
+
+请简述 Vue 的 diff 算法，以及 key 的作用。
 
 ## 📝 标准答案
 

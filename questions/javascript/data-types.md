@@ -8,7 +8,9 @@ related: [deep-clone.md, prototype-chain.md]
 hasCode: true
 ---
 
-# 数据类型与检测
+# 题目
+
+请详细说明 JavaScript 的数据类型，以及如何检测数据类型（typeof、instanceof、Object.prototype.toString.call() 的区别）。
 
 ## 📝 标准答案
 

@@ -8,7 +8,9 @@ related: [lifecycle.md, vue2-vs-vue3.md]
 hasCode: true
 ---
 
-# Vue 组件通信方式
+# 题目
+
+请详细说明 Vue 组件通信的方式有哪些（Props/Emit, Provide/Inject, EventBus, Vuex/Pinia），以及各自的使用场景。
 
 ## 📝 标准答案
 

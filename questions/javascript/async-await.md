@@ -8,7 +8,9 @@ related: [promise.md, event-loop.md, closure.md]
 hasCode: true
 ---
 
-# async/await 原理与应用
+# 题目
+
+请详细说明 async/await 的原理（Generator + 自动执行器），以及如何使用 async/await 进行异步编程。
 
 ## 📝 标准答案
 

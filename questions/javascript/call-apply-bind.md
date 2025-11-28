@@ -8,7 +8,9 @@ related: [this-binding.md, closure.md]
 hasCode: true
 ---
 
-# call、apply、bind 的区别与实现
+# 题目
+
+请详细说明 call、apply、bind 的区别，以及如何手写实现这三个方法。
 
 ## 📝 标准答案
 

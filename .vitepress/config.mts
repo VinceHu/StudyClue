@@ -8,13 +8,19 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     
+    // 品牌色配置
+    // 使用类似 Pinia 的绿色主题
+    // --vp-c-brand-1: #42b883
+    // --vp-c-brand-2: #35a372
+    // --vp-c-brand-3: #299764
+    
     nav: [
       { text: 'Home', link: '/' },
       { text: 'CSS', link: '/questions/css/box-model' },
       { text: 'JavaScript', link: '/questions/javascript/data-types' },
       { text: 'Vue', link: '/questions/vue/vue2-vs-vue3' },
-      { text: 'Browser', link: '/questions/browser/url-to-page' },
-      { text: 'Network', link: '/questions/network/http-versions' },
+      { text: 'Network', link: '/questions/browser/url-to-page' },
+      { text: 'Performance', link: '/questions/performance/cache-strategy' },
       { text: 'Knowledge Map', link: '/knowledge-map/' }
     ],
 
@@ -27,33 +33,6 @@ export default defineConfig({
             { text: '左固定右自适应布局', link: '/questions/css/layout-flex' },
             { text: 'Position定位', link: '/questions/css/position' },
             { text: '水平垂直居中', link: '/questions/css/center-methods' }
-          ]
-        },
-        {
-          text: '性能优化',
-          items: [
-            { text: '绝对定位vs Transform', link: '/questions/performance/transform-vs-position' },
-            { text: '强缓存和协商缓存', link: '/questions/performance/cache-strategy' }
-          ]
-        }
-      ],
-      
-      // 性能优化页面也使用 CSS 的侧边栏
-      '/questions/performance/': [
-        {
-          text: 'CSS',
-          items: [
-            { text: 'CSS盒模型', link: '/questions/css/box-model' },
-            { text: '左固定右自适应布局', link: '/questions/css/layout-flex' },
-            { text: 'Position定位', link: '/questions/css/position' },
-            { text: '水平垂直居中', link: '/questions/css/center-methods' }
-          ]
-        },
-        {
-          text: '性能优化',
-          items: [
-            { text: '绝对定位vs Transform', link: '/questions/performance/transform-vs-position' },
-            { text: '强缓存和协商缓存', link: '/questions/performance/cache-strategy' }
           ]
         }
       ],
@@ -149,10 +128,7 @@ export default defineConfig({
             { text: '从 URL 到页面展示', link: '/questions/browser/url-to-page' },
             { text: '重绘与回流', link: '/questions/browser/repaint-reflow' }
           ]
-        }
-      ],
-      
-      '/questions/network/': [
+        },
         {
           text: '网络协议',
           items: [
@@ -165,6 +141,40 @@ export default defineConfig({
           items: [
             { text: '跨域 (CORS)', link: '/questions/network/cors' },
             { text: '前端安全 (XSS/CSRF)', link: '/questions/network/security' }
+          ]
+        }
+      ],
+      
+      '/questions/network/': [
+        {
+          text: '浏览器原理',
+          items: [
+            { text: '从 URL 到页面展示', link: '/questions/browser/url-to-page' },
+            { text: '重绘与回流', link: '/questions/browser/repaint-reflow' }
+          ]
+        },
+        {
+          text: '网络协议',
+          items: [
+            { text: 'HTTP 版本对比', link: '/questions/network/http-versions' },
+            { text: 'TCP 三次握手和四次挥手', link: '/questions/network/tcp-handshake' }
+          ]
+        },
+        {
+          text: '网络安全',
+          items: [
+            { text: '跨域 (CORS)', link: '/questions/network/cors' },
+            { text: '前端安全 (XSS/CSRF)', link: '/questions/network/security' }
+          ]
+        }
+      ],
+      
+      '/questions/performance/': [
+        {
+          text: '性能优化',
+          items: [
+            { text: '强缓存和协商缓存', link: '/questions/performance/cache-strategy' },
+            { text: '绝对定位vs Transform', link: '/questions/performance/transform-vs-position' }
           ]
         }
       ]
@@ -213,8 +223,12 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'keywords', content: '前端面试,面试题,CSS,JavaScript,Vue,面试指导' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/study/favicon.svg' }],
+    ['link', { rel: 'alternate icon', type: 'image/x-icon', href: '/study/favicon.ico' }],
+    ['link', { rel: 'apple-touch-icon', href: '/study/logo.svg' }],
+    ['meta', { name: 'theme-color', content: '#42b883' }],
+    ['meta', { name: 'keywords', content: '前端面试,面试题,CSS,JavaScript,Vue,浏览器,网络,性能优化,面试指导' }],
+    ['meta', { name: 'description', content: 'StudyClue - 系统化的前端面试题学习平台，包含标准答案、深度理解、面试技巧' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap', rel: 'stylesheet' }]

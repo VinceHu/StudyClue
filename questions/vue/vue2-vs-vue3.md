@@ -8,7 +8,9 @@ related: [reactive-principle.md, composition-api.md]
 hasCode: true
 ---
 
-# Vue 2 和 Vue 3 的核心区别
+# 题目
+
+请详细说明 Vue 2 和 Vue 3 的核心区别，包括响应式原理差异（Object.defineProperty vs Proxy）和 Options API vs Composition API。
 
 ## 📝 标准答案
 

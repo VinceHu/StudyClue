@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 简化版 favicon，透明背景 -->
+  <defs>
+    <linearGradient id="favicon_grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#42b883" />
+      <stop offset="100%" stop-color="#35495e" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 简化的图形 - 无背景 -->
+  <g stroke="url(#favicon_grad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 左括号 -->
+    <path d="M11 8 L6 16 L11 24" />
+    <!-- 对钩 -->
+    <path d="M16 16 L20 22 L26 10" />
+    <!-- 底部光标 -->
+    <line x1="13" y1="27" x2="19" y2="27" stroke="#42b883" stroke-width="2.5" />
+  </g>
+</svg>
