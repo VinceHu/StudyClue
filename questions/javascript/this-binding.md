@@ -1,5 +1,7 @@
 ---
-title: this 指向与箭头函数
+title: JavaScript this 指向与箭头函数 - 彻底理解 this 绑定规则
+description: 详解 JavaScript 中 this 的 4 种绑定规则（默认、隐式、显式、new），以及箭头函数的 this 特性和使用场景
+keywords: JavaScript this, 箭头函数, this绑定, call apply bind, 前端面试, this指向
 date: 2025-11-27
 category: JavaScript
 difficulty: 中级

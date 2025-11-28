@@ -1,5 +1,7 @@
 ---
-title: 重绘 (Repaint) 与回流 (Reflow)
+title: 重绘 (Repaint) 与回流 (Reflow) - 浏览器渲染性能优化
+description: 详解浏览器重绘和回流的区别、触发条件，掌握减少回流的 10 种优化技巧，提升页面渲染性能
+keywords: 重绘回流, Repaint Reflow, 浏览器渲染, 性能优化, Layout, 前端优化
 date: 2025-11-27
 category: 浏览器
 difficulty: 中级

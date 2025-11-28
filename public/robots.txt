@@ -1,0 +1,10 @@
+# robots.txt for StudyClue
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vincehu.github.io/StudyClue/sitemap.xml
+
+# 禁止爬取的目录
+Disallow: /assets/
+Disallow: /.vitepress/

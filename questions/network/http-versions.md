@@ -1,5 +1,7 @@
 ---
-title: HTTP 1.1, 2.0, 3.0 的主要区别
+title: HTTP 1.1, 2.0, 3.0 的主要区别 - 多路复用与 QUIC 协议
+description: 详解 HTTP/1.1、HTTP/2、HTTP/3 的核心区别，包括多路复用、头部压缩、服务器推送、QUIC 协议等特性
+keywords: HTTP版本区别, HTTP/2, HTTP/3, QUIC, 多路复用, 前端性能优化, 网络协议
 date: 2025-11-27
 category: 网络
 difficulty: 中级

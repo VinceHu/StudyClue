@@ -3,7 +3,16 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/StudyClue/',
   title: "StudyClue",
-  description: "Your systematic guide to frontend interview preparation",
+  description: "系统化的前端面试学习平台 - 标准答案、深度理解、面试技巧",
+  lang: 'zh-CN',
+  
+  // SEO 优化：生成干净的 URL
+  cleanUrls: true,
+  
+  // SEO 优化：生成 sitemap
+  sitemap: {
+    hostname: 'https://vincehu.github.io/StudyClue'
+  },
   
   themeConfig: {
     logo: '/logo.svg',
@@ -185,7 +194,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: '基于 MIT 许可发布',
+      message: '基于 MIT 许可发布 | <a href="/privacy">隐私政策</a>',
       copyright: 'Copyright © 2025-present'
     },
 
@@ -223,12 +232,37 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   head: [
+    // Favicon
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/StudyClue/favicon.svg' }],
     ['link', { rel: 'alternate icon', type: 'image/x-icon', href: '/StudyClue/favicon.ico' }],
     ['link', { rel: 'apple-touch-icon', href: '/StudyClue/logo.svg' }],
+    
+    // SEO Meta Tags
     ['meta', { name: 'theme-color', content: '#42b883' }],
-    ['meta', { name: 'keywords', content: '前端面试,面试题,CSS,JavaScript,Vue,浏览器,网络,性能优化,面试指导' }],
-    ['meta', { name: 'description', content: 'StudyClue - 系统化的前端面试题学习平台，包含标准答案、深度理解、面试技巧' }],
+    ['meta', { name: 'keywords', content: '前端面试,面试题,JavaScript面试题,Vue面试题,CSS面试题,前端学习,面试指导,前端知识点,浏览器原理,网络协议,性能优化' }],
+    ['meta', { name: 'author', content: 'VinceHu' }],
+    
+    // Open Graph / Facebook
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: 'https://vincehu.github.io/StudyClue/' }],
+    ['meta', { property: 'og:title', content: 'StudyClue - 系统化的前端面试学习平台' }],
+    ['meta', { property: 'og:description', content: '提供标准答案、深度理解、面试技巧，涵盖 JavaScript、Vue、CSS、浏览器原理、网络协议等核心知识点' }],
+    ['meta', { property: 'og:image', content: 'https://vincehu.github.io/StudyClue/logo.svg' }],
+    
+    // Twitter Card
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:url', content: 'https://vincehu.github.io/StudyClue/' }],
+    ['meta', { name: 'twitter:title', content: 'StudyClue - 系统化的前端面试学习平台' }],
+    ['meta', { name: 'twitter:description', content: '提供标准答案、深度理解、面试技巧，涵盖 JavaScript、Vue、CSS、浏览器原理、网络协议等核心知识点' }],
+    ['meta', { name: 'twitter:image', content: 'https://vincehu.github.io/StudyClue/logo.svg' }],
+    
+    // 百度站长验证（需要时添加）
+    // ['meta', { name: 'baidu-site-verification', content: 'your-verification-code' }],
+    
+    // Google 站长验证（需要时添加）
+    // ['meta', { name: 'google-site-verification', content: 'your-verification-code' }],
+    
+    // Fonts
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap', rel: 'stylesheet' }]

@@ -1,5 +1,7 @@
 ---
-title: 数据类型与检测
+title: JavaScript 数据类型与检测 - 基本类型 vs 引用类型详解
+description: 详解 JavaScript 的 7 种基本数据类型和引用类型的区别，以及 typeof、instanceof、Object.prototype.toString.call() 三种类型检测方法的使用场景和原理
+keywords: JavaScript数据类型, typeof, instanceof, 类型检测, 基本类型, 引用类型, 栈内存, 堆内存, 前端面试
 date: 2025-11-27
 category: JavaScript
 difficulty: 基础

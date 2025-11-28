@@ -1,5 +1,7 @@
 ---
-title: call、apply、bind 的区别与实现
+title: call、apply、bind 的区别与手写实现 - JavaScript 面试必考
+description: 深入理解 call、apply、bind 三者的区别和使用场景，掌握手写实现的核心原理，包含完整代码示例和测试用例
+keywords: call apply bind, 手写call, 手写apply, 手写bind, JavaScript面试题, this绑定
 date: 2025-11-27
 category: JavaScript
 difficulty: 中级

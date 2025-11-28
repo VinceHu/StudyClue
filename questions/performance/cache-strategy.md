@@ -1,5 +1,7 @@
 ---
-title: 强缓存和协商缓存
+title: 强缓存和协商缓存 - HTTP 缓存策略详解
+description: 深入理解 HTTP 缓存机制，掌握强缓存（Expires、Cache-Control）和协商缓存（ETag、Last-Modified）的区别和使用场景
+keywords: HTTP缓存, 强缓存, 协商缓存, Cache-Control, ETag, 前端性能优化, 浏览器缓存
 date: 2025-11-27
 category: Performance
 difficulty: 中级

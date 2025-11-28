@@ -1,5 +1,7 @@
 ---
-title: Vue 2 和 Vue 3 的核心区别
+title: Vue 2 和 Vue 3 的核心区别 - 响应式原理与 Composition API
+description: 详解 Vue 2 和 Vue 3 的 10 大核心区别，包括响应式原理（Object.defineProperty vs Proxy）、Composition API、性能优化等
+keywords: Vue2 Vue3区别, Proxy响应式, Composition API, Vue面试题, Vue3新特性
 date: 2025-11-27
 category: Vue
 difficulty: 中级

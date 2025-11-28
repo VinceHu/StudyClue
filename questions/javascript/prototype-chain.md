@@ -1,5 +1,7 @@
 ---
-title: 原型与原型链
+title: JavaScript 原型与原型链详解 - __proto__ vs prototype 区别
+description: 深入理解 JavaScript 原型链机制，掌握 __proto__ 和 prototype 的区别，学习 ES5 寄生组合继承和 ES6 class extends 的实现原理
+keywords: JavaScript原型链, prototype, __proto__, 继承, ES6 class, 寄生组合继承, 前端面试题
 date: 2025-11-27
 category: JavaScript
 difficulty: 中级

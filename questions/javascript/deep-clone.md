@@ -1,5 +1,7 @@
 ---
-title: 深拷贝 vs 浅拷贝
+title: 深拷贝 vs 浅拷贝 - 手写深拷贝处理循环引用
+description: 详解 JavaScript 深拷贝和浅拷贝的区别，掌握 JSON.parse 的缺陷，学习手写深拷贝处理循环引用、特殊对象的完整实现
+keywords: 深拷贝浅拷贝, 手写深拷贝, 循环引用, JSON.parse, WeakMap, JavaScript面试
 date: 2025-11-27
 category: JavaScript
 difficulty: 中级

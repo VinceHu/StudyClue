@@ -1,5 +1,7 @@
 ---
-title: JavaScript闭包
+title: JavaScript 闭包详解 - 原理、应用场景与内存管理
+description: 深入理解 JavaScript 闭包的本质和工作原理，掌握闭包的经典应用场景，学习如何避免内存泄漏问题
+keywords: JavaScript闭包, 闭包原理, 作用域链, 内存泄漏, 前端面试, 闭包应用
 date: 2025-11-20
 category: JavaScript
 difficulty: 中级

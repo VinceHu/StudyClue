@@ -1,5 +1,7 @@
 ---
-title: Vue 的 diff 算法与 key 的作用
+title: Vue 的 diff 算法与 key 的作用 - 双端比较原理详解
+description: 深入理解 Vue 的虚拟 DOM diff 算法，掌握双端比较策略，学习 key 的作用和为什么不能用 index 作为 key
+keywords: Vue diff算法, 虚拟DOM, key作用, 双端比较, Vue性能优化, Vue面试
 date: 2025-11-27
 category: Vue
 difficulty: 高级

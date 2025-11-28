@@ -1,5 +1,7 @@
 ---
-title: computed 和 watch 的区别
+title: computed 和 watch 的区别 - 计算属性 vs 侦听器使用场景
+description: 详解 Vue 中 computed 和 watch 的区别，包括缓存机制、使用场景、性能对比，以及 watchEffect 的使用
+keywords: computed watch区别, 计算属性, 侦听器, Vue响应式, watchEffect, Vue面试
 date: 2025-11-27
 category: Vue
 difficulty: 基础

@@ -1,5 +1,7 @@
 ---
-title: Vue 生命周期详解
+title: Vue 生命周期详解 - 父子组件执行顺序与钩子函数
+description: 深入理解 Vue 生命周期的 8 个钩子函数，掌握父子组件生命周期的执行顺序，学习生命周期的最佳实践
+keywords: Vue生命周期, 钩子函数, 父子组件, beforeCreate created mounted, Vue面试
 date: 2025-11-27
 category: Vue
 difficulty: 基础

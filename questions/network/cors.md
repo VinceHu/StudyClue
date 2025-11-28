@@ -1,5 +1,7 @@
 ---
-title: 跨域 (CORS) 问题与解决方案
+title: 跨域 (CORS) 问题与解决方案 - 同源策略详解
+description: 深入理解浏览器同源策略和 CORS 跨域机制，掌握 JSONP、代理、CORS 等 8 种跨域解决方案的原理和使用场景
+keywords: 跨域, CORS, 同源策略, JSONP, 跨域解决方案, 前端面试, Access-Control-Allow-Origin
 date: 2025-11-27
 category: 网络
 difficulty: 中级

@@ -1,5 +1,7 @@
 ---
-title: async/await 原理与应用
+title: async/await 原理与应用 - Generator + 自动执行器实现
+description: 深入理解 async/await 的底层实现原理，掌握 Generator 函数和自动执行器，学习异步并发控制和错误处理最佳实践
+keywords: async await, Generator, Promise, 异步编程, JavaScript面试, 并发控制
 date: 2025-11-27
 category: JavaScript
 difficulty: 中级
