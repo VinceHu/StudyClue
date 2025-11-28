@@ -1,0 +1,64 @@
+/**
+ * 主题颜色配置
+ * 
+ * 这些颜色自动从 logo.svg 中提取
+ * 如果更换 logo，请更新这里的颜色值以保持整体风格一致
+ * 
+ * 当前 logo 颜色：
+ * - 主色：#42b883 (品牌绿)
+ * - 辅助色：#35495e (深蓝灰)
+ */
+
+:root {
+  /* ========== 从 Logo 提取的品牌色 ========== */
+  --logo-primary: #42b883;
+  --logo-secondary: #35495e;
+  
+  /* ========== 基于品牌色生成的色阶 ========== */
+  /* 主色色阶 - 用于按钮、链接、高亮等 */
+  --vp-c-brand-1: var(--logo-primary);
+  --vp-c-brand-2: #35a372;  /* 主色加深 10% */
+  --vp-c-brand-3: #299764;  /* 主色加深 20% */
+  --vp-c-brand-soft: rgba(66, 184, 131, 0.1);  /* 主色 10% 透明度 */
+  --vp-c-brand-lighter: rgba(66, 184, 131, 0.05);  /* 主色 5% 透明度 */
+  
+  /* 辅助色色阶 - 用于文字、边框等 */
+  --vp-c-text-1: var(--logo-secondary);
+  --vp-c-text-2: #476582;  /* 辅助色变亮 */
+  --vp-c-text-3: #90a4b7;  /* 辅助色更亮 */
+  
+  /* ========== 中性色 ========== */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f6f6f7;
+  --vp-c-bg-mute: #f1f1f2;
+  
+  --vp-c-divider: #e2e2e3;
+  --vp-c-divider-light: #e5e7eb;
+  
+  --vp-c-border: #e4e4e7;
+  --vp-c-gutter: #e2e2e3;
+  
+  /* ========== 语义化颜色 ========== */
+  --vp-button-brand-bg: var(--logo-primary);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-bg: var(--vp-c-brand-3);
+  
+  /* ========== 自定义应用颜色 ========== */
+  --app-hero-name-color: var(--logo-primary);
+  --app-hero-text-color: var(--logo-secondary);
+  --app-hero-tagline-color: var(--vp-c-text-2);
+  
+  --app-feature-border: var(--vp-c-border);
+  --app-feature-border-hover: var(--logo-primary);
+  --app-feature-shadow-hover: rgba(66, 184, 131, 0.12);
+  
+  --app-nav-bg: #ffffff;
+  --app-nav-border: var(--vp-c-divider-light);
+}
+
+/* 深色模式（如果需要） */
+.dark {
+  /* 保持浅色主题，与 logo 风格一致 */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f6f6f7;
+}
