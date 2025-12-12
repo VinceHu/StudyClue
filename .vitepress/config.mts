@@ -195,7 +195,7 @@ export default defineConfig({
       
       '/projects/': [
         {
-          text: 'Projects',
+          text: '项目实战',
           items: [
             { text: '栏目介绍', link: '/projects/' }
           ]
