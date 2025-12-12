@@ -226,21 +226,6 @@ performance.measure('animation', 'animation-start', 'animation-end');
 
 ## 💡 面试回答技巧
 
-### 推荐回答顺序
-
-1. **先说结论**：Transform性能更好，因为只触发合成，不触发重排重绘
-2. **解释渲染流程**：介绍浏览器的5个渲染阶段
-3. **对比差异**：绝对定位触发Layout和Paint，Transform只触发Composite
-4. **说明GPU加速**：Transform可以在GPU上渲染，利用硬件加速
-5. **补充实践**：提到will-change、合成层等优化手段
-
-### 重点强调
-
-- 强调"重排 > 重绘 > 合成"的性能差异
-- 说明Transform和opacity是仅有的两个只触发合成的属性
-- 提到实际项目中的应用：动画、滚动优化等
-- 说明过度优化的问题：层爆炸
-
 ### 🎯 一句话回答（快速版）
 
 Transform只触发合成（Composite），跳过重排和重绘，还能利用GPU加速；而top/left会触发重排和重绘，性能差很多。
@@ -258,6 +243,21 @@ Transform只触发合成（Composite），跳过重排和重绘，还能利用GP
 实际上，只有transform和opacity这两个属性能完全跳过重排重绘，是做动画的最佳选择。
 
 不过也要注意，不要滥用will-change或translateZ(0)来强制创建合成层，太多合成层会导致内存占用过高，反而影响性能，这叫层爆炸。
+
+### 推荐回答顺序
+
+1. **先说结论**：Transform性能更好，因为只触发合成，不触发重排重绘
+2. **解释渲染流程**：介绍浏览器的5个渲染阶段
+3. **对比差异**：绝对定位触发Layout和Paint，Transform只触发Composite
+4. **说明GPU加速**：Transform可以在GPU上渲染，利用硬件加速
+5. **补充实践**：提到will-change、合成层等优化手段
+
+### 重点强调
+
+- 强调"重排 > 重绘 > 合成"的性能差异
+- 说明Transform和opacity是仅有的两个只触发合成的属性
+- 提到实际项目中的应用：动画、滚动优化等
+- 说明过度优化的问题：层爆炸
 
 ### 可能的追问
 
