@@ -241,11 +241,11 @@ performance.measure('animation', 'animation-start', 'animation-end');
 - 提到实际项目中的应用：动画、滚动优化等
 - 说明过度优化的问题：层爆炸
 
-## 🎯 一句话回答（快速版）
+### 🎯 一句话回答（快速版）
 
 Transform只触发合成（Composite），跳过重排和重绘，还能利用GPU加速；而top/left会触发重排和重绘，性能差很多。
 
-## 📣 口语化回答（推荐）
+### 📣 口语化回答（推荐）
 
 这个问题要从浏览器的渲染流程说起。浏览器渲染页面有5个阶段：JavaScript、样式计算、布局（Layout）、绘制（Paint）、合成（Composite）。
 
